@@ -1,0 +1,119 @@
+body{
+
+}
+
+.dflt{
+    background-color: #f2f2f2;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.header{
+
+
+
+    height: 140px;
+    width: 80%;
+    background-image: url("/img/cal.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px 50px;
+
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+}
+
+span.title{
+    font-size: 25px;
+    line-height: 250px;
+    bottom: 0;
+}
+
+div.login{
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    background-color: #f2f2f2;
+    padding: 10px 10px;
+    -webkit-box-shadow: 7px 7px 32px -1px rgba(0,0,0,0.42);
+    -moz-box-shadow: 7px 7px 32px -1px rgba(0,0,0,0.42);
+    box-shadow: 7px 7px 32px -1px rgba(0,0,0,0.42);
+
+}
+
+.inputWidth{
+    width: 150px;
+}
+
+.centered{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+div.add{
+
+    padding: 10px;
+    border-top: none;
+    width: 75%;
+    align-content: flex-end;
+
+}
+
+.hide{
+    display: none;
+}
+
+form.centered{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.smallTD{
+    width: 15%;
+}
+
+.smallerTD{
+    width: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.atooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    text-align: center;
+}
+
+.atooltip .atooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #393939;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.atooltip:hover .atooltiptext {
+    visibility: visible;
+}

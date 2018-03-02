@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> LISTA </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../static/css/Style.css" th:href="@{/css/Style.css}" type="text/css"/>
+</head>
+<body>
+<h1>Lista wydarzen: </h1>
+
+<table>
+    <tr th:each="event: ${events}">
+        <td th:text="${event.getDaysLeft()}"> TIME LEFT </td>
+        <td th:text="${event.getEvent().getTitle()}"> TITLE </td>
+    </tr>
+</table>
+
+</body>
+</html>
