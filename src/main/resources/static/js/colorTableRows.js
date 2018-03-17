@@ -6,8 +6,13 @@ function colorTable() {
         document.getElementById('mainTable').rows[j].setAttribute('id',String(j));
     }
 
+
+
     for (var i = 1 ; i <= x ; i++){
-        var daysLeftString = document.getElementById('left-'+i).innerText;
+
+        var daysLeftString = document.getElementById('mainTable').rows[i].cells[1].innerText;
+
+        //var daysLeftString = document.getElementById('left-'+i).innerText;
         var daysLeft = parseInt(daysLeftString);
         var leftBorder = document.getElementById(String(i));
         if (daysLeft < 0 ){
