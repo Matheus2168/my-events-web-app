@@ -3,7 +3,22 @@ function asd() {
         $("#1").slideToggle(1000);
 }
 
-function remove() {
+function removeMyEventM2() {
+
+    var target = event.target || event.srcElement;
+    var idText = target.id;
+    var split = idText.split("-");
+    var id = split[1];
+
+    var a = confirm("Czy na pewno chcesz usunac to wydarzenie ?");
+
+    if (a === true){
+        window.location.href = 'http://localhost:8080/delete/event/'+id;
+    }
+
+}
+
+function removeMyEvent() {
 
     var target = event.target || event.srcElement;
     var idText = target.id;

@@ -36,6 +36,12 @@ public class ApiController {
        else return false;
     }
 
+    @GetMapping("/api/get/{id}")
+    @ResponseBody
+    public MyEvent getMyEvent(@PathVariable Long id){
+        return events.getOne(id);
+    }
+
     @DeleteMapping("/api/delete/event/{id}")
     @Modifying
     public void deleteEvent(@PathVariable Long id){
