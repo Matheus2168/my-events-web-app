@@ -13,7 +13,7 @@ function removeMyEventM2() {
     var a = confirm("Czy na pewno chcesz usunac to wydarzenie ?");
 
     if (a === true){
-        window.location.href = 'http://localhost:8080/delete/event/'+id;
+        window.location.href = '/delete/event/'+id;
     }
 
 }

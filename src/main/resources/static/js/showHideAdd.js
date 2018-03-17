@@ -30,7 +30,7 @@ function replaceMyDiv() {
     var year;
 
     jQuery.ajax({
-        url: "http://localhost:8080/api/get/"+id,
+        url: "/api/get/"+id,
         success: function (myEvent) {
             result = JSON.stringify(myEvent);
 

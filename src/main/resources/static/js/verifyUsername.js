@@ -38,7 +38,7 @@ function checkByAjax(username) {
     var result = null;
 
         jQuery.ajax({
-            url: "http://localhost:8080/api/verifyUsername/"+username,
+            url: "/api/verifyUsername/"+username,
             success: function( isUsernameAvailable ) {
                     result = isUsernameAvailable;},
                     async: false
