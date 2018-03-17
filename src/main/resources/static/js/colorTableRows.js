@@ -1,6 +1,11 @@
 function colorTable() {
 
     var x = document.getElementById('mainTable').rows.length-1;
+
+    for (var j = 1 ; j <= x ; j++){
+        document.getElementById('mainTable').rows[j].setAttribute('id',String(j));
+    }
+
     for (var i = 1 ; i <= x ; i++){
         var daysLeftString = document.getElementById('left-'+i).innerText;
         var daysLeft = parseInt(daysLeftString);

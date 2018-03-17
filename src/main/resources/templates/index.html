@@ -49,7 +49,7 @@
             <th class="smallerTD"> Info: </th>
             <th class="smallTD centered"> Opcje: </th>
         </tr>
-        <tr th:id="${event.getEvent().getId()}" th:each="event: ${events}">
+        <tr th:each="event: ${events}">
             <td style="text-align: center" th:text="${event.getEvent().getTitle()}"> TITLE </td>
             <td th:id="'left-'+${event.getEvent().getId()}" style="text-align: center" th:text="${event.getDaysLeft()}"> TIME LEFT </td>
             <td class="smallerTDTD centered">
