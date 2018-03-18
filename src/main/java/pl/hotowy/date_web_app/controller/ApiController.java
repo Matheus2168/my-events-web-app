@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.hotowy.date_web_app.db.EventsDB;
 import pl.hotowy.date_web_app.model.*;
 import pl.hotowy.date_web_app.service.EncodeOperator;
+import pl.hotowy.date_web_app.service.EventsToTextConverter;
 import pl.hotowy.date_web_app.service.MyEventTasker;
 
 import java.security.Principal;
@@ -46,6 +47,26 @@ public class ApiController {
     @Modifying
     public void deleteEvent(@PathVariable Long id){
         events.delete(id);
+    }
+
+    @GetMapping("/api/stats")
+    @ResponseBody
+    public String getStats(){
+        String result = "";
+        int usersCount = users.findAll().size();
+        int eventsCount = events.findAll().size();
+        result+="Uzytkownicy: "+usersCount+"\n";
+        result+="Wydarzenia: "+eventsCount+"\n";
+        return result;
+    }
+
+    @GetMapping("/api/listAsTxt")
+    @ResponseBody
+    public String getStringList(Principal principal){
+
+        List<MyEvent> allByOwner = events.findAllByOwner(users.findByUsername(principal.getName()));
+        String result = EventsToTextConverter.convert(allByOwner);
+        return result;
     }
 
 
