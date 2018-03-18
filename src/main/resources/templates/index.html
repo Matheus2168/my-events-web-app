@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
@@ -62,8 +62,9 @@
 
             </td>
             <td class="smallTD centered" style="vertical-align: middle">
+                <i onclick="repeatEvent()" th:id="'repeat-'+${event.getEvent().getId()}" th:if="${event.getDaysLeft() &lt; 0}" class="fa fa-repeat" style="font-size:24px; text-align: left"></i>
                 <i onclick="replaceMyDiv()" th:id="'edit-'+${event.getEvent().getId()}" class="fa fa-edit" style="font-size:24px"></i>
-                <i onclick="removeMyEventM2()" th:id="'del-'+${event.getEvent().getId()}" class="fa fa-trash" style="font-size:24px"></i>
+                <i onclick="removeMyEventM2()" th:id="'del-'+${event.getEvent().getId()}" class="fa fa-trash" style="font-size:26px"></i>
 
             </td>
         </tr>
@@ -127,6 +128,22 @@
         </div>
 
 
+    </form>
+</div>
+
+<div class="container hide add align-middle centred col dflt" id="repeat">
+    <h4 id="repeat-title"> Odnów wydarzenie: </h4>
+    <form onsubmit="calculateNewDateOnRepeat()" id="repeat-form" method="post">
+        <input type="hidden" id="repeat-id" value=""/>
+        <input type="hidden" id="repeat-eventTitle" name="title" value=""/>
+        <input type="hidden" id="repeat-description" name="description" value=""/>
+        <input type="hidden" id="repeat-date" name="date" value=""/>
+        <input type="hidden" th:name="${_csrf.getParameterName()}" th:value="${_csrf.getToken()}"/>
+        <!-- <input type="radio" name="time" value="male" /> Na następny dzień <br/> -->
+        <!-- <input type="radio" name="time" value="female" /> Na przyszły tydzień <br/> -->
+        <input onclick="enableRepeatSubmitButton()" type="radio" name="time" value="month" /> Na przyszły miesiąc <br/>
+        <input onclick="enableRepeatSubmitButton()" type="radio" name="time" value="year" /> Na następny rok <br/>
+        <input id="repeat-submit" type="submit" disabled="disabled"/>
     </form>
 </div>
 

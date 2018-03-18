@@ -3,6 +3,10 @@ function asd() {
         $("#1").slideToggle(1000);
 }
 
+function enableRepeatSubmitButton() {
+    document.getElementById('repeat-submit').disabled = false;
+}
+
 function removeMyEventM2() {
 
     var target = event.target || event.srcElement;
